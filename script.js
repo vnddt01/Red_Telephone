@@ -1,9 +1,11 @@
+
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw3vIiaHscEtCfpsUt-q7kwgkiOI8z_Twis6_XNmHZ_Mnz9HBgguMNboItvqqsZ-D9k/exec";
 
 const form = document.querySelector("#message-form");
 const inputArea = document.querySelector("#message-input-area");
 const status = document.querySelector("#form-status");
 const button = document.querySelector("#send-button");
+
 
 const messageLabel = document.createElement("label");
 messageLabel.htmlFor = "message";
@@ -32,18 +34,20 @@ form.addEventListener("submit", async (event) => {
   button.textContent = "Đang gửi...";
   status.textContent = "";
 
-  const data = {
-    name: document.querySelector("#sender-name").value.trim(),
-    message: messageInput.value.trim()
-  };
-
   try {
+
+    const data = {
+      message: messageInput.value.trim()
+    };
+
+ 
     await fetch(GOOGLE_SCRIPT_URL, {
       method: "POST",
       mode: "no-cors",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify(data)
     });
+
     form.reset();
     status.textContent = "Cảm ơn bạn! Lời nhắn đã được gửi.";
     status.classList.add("success");
