@@ -1,4 +1,3 @@
-// Dán URL "Web app" của Google Apps Script vào đây sau khi triển khai.
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw3vIiaHscEtCfpsUt-q7kwgkiOI8z_Twis6_XNmHZ_Mnz9HBgguMNboItvqqsZ-D9k/exec";
 
 const form = document.querySelector("#message-form");
@@ -6,7 +5,6 @@ const inputArea = document.querySelector("#message-input-area");
 const status = document.querySelector("#form-status");
 const button = document.querySelector("#send-button");
 
-// Tạo ô nhập lời nhắn bằng JavaScript.
 const messageLabel = document.createElement("label");
 messageLabel.htmlFor = "message";
 messageLabel.textContent = "Lời nhắn của bạn";
@@ -40,8 +38,6 @@ form.addEventListener("submit", async (event) => {
   };
 
   try {
-    // no-cors cho phép gửi đến Apps Script từ website tĩnh.
-    // Apps Script vẫn nhận dữ liệu và lưu vào Sheet.
     await fetch(GOOGLE_SCRIPT_URL, {
       method: "POST",
       mode: "no-cors",
