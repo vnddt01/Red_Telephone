@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vn.ddt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="hero" aria-labelledby="name">
+        <div class="avatar" aria-hidden="true">vn.ddt</div>
+        <p class="eyebrow">Xin chào, mình là</p>
+        <h1 id="name">Dương Đình Tập</h1>
+        <p class="intro"></p>
+        <nav class="links" aria-label="Liên kết cá nhân">
+        </nav>
+      </section>
+
+     
+
+      <section class="message-card" id="message" aria-labelledby="message-title">
+        <p class="section-label">LỜI NHẮN</p>
+        <h2 id="message-title">Để lại vài dòng nhé</h2>
+        <p class="card-intro">Lời nhắn của bạn sẽ được gửi riêng đến mình và nó ẩn danh á.</p>
+        <form id="message-form">
+
+          <div id="message-input-area"></div>
+          <button id="send-button" type="submit">Gửi lời nhắn <span aria-hidden="true">→</span></button>
+          <p id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+    <footer>vn.ddt</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
